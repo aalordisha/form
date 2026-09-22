@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ALOR DISHA - Yogasana Competition Form</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="header-bg" aria-hidden="true"></div>
+    <div class="container">
+      <h1 class="brand-title">ALOR DISHA</h1>
+      <p class="subtitle">Yogasana Competition Form</p>
+    </div>
+  </header>
+
+  <main class="container">
+
+    <!-- Loading -->
+    <div id="loading" class="loading hidden" aria-live="polite">
+      <div class="spinner"></div>
+      <span>Processing, please wait...</span>
+    </div>
+
+    <!-- Message -->
+    <div id="message" class="message hidden" aria-live="assertive"></div>
+
+    <!-- Success Panel -->
+    <div id="success-panel" class="success-panel hidden">
+      <div class="success-icon">&#10003;</div>
+      <h2 id="success-title">Registration Successful</h2>
+      <div class="success-details">
+        <p>Candidate ID: <strong id="success-cid"></strong></p>
+        <p>Serial Number: <strong id="success-serial"></strong></p>
+      </div>
+      <div class="success-actions">
+        <button class="btn btn-primary" onclick="resetForm()">Register Another Candidate</button>
+      </div>
+    </div>
+
+    <!-- Registration Form -->
+    <section id="register-section" class="section">
+      <h2>Candidate Registration Form</h2>
+
+      <form id="candidate-form" onsubmit="submitForm(event)" novalidate>
+
+        <!-- Candidate Details -->
+        <fieldset class="card">
+          <legend>Candidate Details</legend>
+          <div class="grid">
+            <div class="field">
+              <label for="c-name">Name of Candidate <span class="req">*</span></label>
+              <input type="text" id="c-name" autocomplete="off" placeholder="Full name">
+            </div>
+            <div class="field">
+              <label for="c-dob">Date of Birth <span class="req">*</span></label>
+              <input type="date" id="c-dob">
+            </div>
+            <div class="field">
+              <label for="c-aadhaar">Aadhaar Number <span class="req">*</span></label>
+              <input type="text" id="c-aadhaar" maxlength="12" inputmode="numeric"
+                     placeholder="12 digits" autocomplete="off">
+            </div>
+            <div class="field">
+              <label for="c-mobile">Mobile Number</label>
+              <input type="text" id="c-mobile" maxlength="10" inputmode="numeric"
+                     placeholder="10 digits" autocomplete="off">
+            </div>
+            <div class="field">
+              <label for="c-whatsapp">WhatsApp Number</label>
+              <input type="text" id="c-whatsapp" maxlength="10" inputmode="numeric"
+                     placeholder="10 digits" autocomplete="off">
+            </div>
+            <div class="field full">
+              <label for="c-address">Full Address with PIN Code</label>
+              <textarea id="c-address" rows="2" placeholder="House / Street / Area / City / State"></textarea>
+            </div>
+          </div>
+        </fieldset>
+
+        <!-- Guardians -->
+        <fieldset class="card">
+          <legend>Guardian / Related Person Details</legend>
+          <div id="guardians-container"></div>
+          <button type="button" class="btn btn-add" onclick="addGuardian()">
+            + Add Another Guardian / Related Person
+          </button>
+        </fieldset>
+
+        <div class="form-actions">
+          <button type="submit" class="btn btn-primary btn-lg" id="submit-btn">
+            Submit Registration
+          </button>
+          <button type="button" class="btn btn-outline" onclick="resetForm()">Clear Form</button>
+        </div>
+      </form>
+    </section>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <p>ALOR DISHA &nbsp;|&nbsp; Yogasana Competition Form</p>
+      <p>Guru: Satyaki Pahari &nbsp;|&nbsp; Contact: 7407917787</p>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
