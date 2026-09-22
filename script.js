@@ -5,7 +5,7 @@
 
 // ====== CONFIGURATION ======
 // Replace with your Google Apps Script Web App URL after deployment.
-const WEB_APP_URL = 'YOUR_WEB_APP_URL_HERE';
+const WEB_APP_URL = 'https://script.google.com/macros/s/AKfycbyCrBTTAypZPMiWHKfQIVTyBr72NOwbxIWe-f1jQ6dOMauwkFujZREeqKEmtQcc4szbPg/exec';
 
 // ====== STATE ======
 let guardianSeq = 0;
